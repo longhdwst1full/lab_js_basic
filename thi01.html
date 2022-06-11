@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="conainer">
+        <div class="slide">
+            <div class="slide_img">
+                <img width="200px" height="200px"
+                    src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg" alt="">
+
+            </div>
+            <button class="btn_next">Next</button>
+            <button class="btn_prev">Previous</button>
+        </div>
+        <div class="form">
+            <form action="" class="form_btn" onsubmit="return kiemtra()">
+                <h1>Đăng kí thành viên</h1>
+                <table>
+                    <tr>
+                        <td>Họ tên</td>
+                        <td><input type="text" id="name1"></td>
+                    <tr>
+                        <td id="error_name"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="email" class="email"></td>
+                    <tr>
+                        <td id="error_email"></td>
+                    </tr>
+                    </tr>
+
+
+                    <tr>
+                        <td>Số điện thoại</td>
+                        <td><input type="text" class="sdt"></td>
+                    <tr>
+                        <td id="error_sdt"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>User</td>
+                        <td><input type="text" class="user"></td>
+                    <tr>
+                        <td id="error_user"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Pass</td>
+                        <td><input type="password" class="new_pass"></td>
+                    <tr>
+                        <td id="error_pass"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Repass</td>
+                        <td><input type="password" class="repass"></td>
+                    <tr>
+                        <td id="error_repass"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Bạn biết chúng tôi</td>
+                        <td>
+                    <tr>
+                        <td>
+                            <input type="radio">Bạn giới thiệu
+                        </td>
+                        <td>
+                            <input type="radio">Qua FB
+                        </td>
+
+                    </tr>
+                    </td>
+                    <tr>
+                        <td id="error_contact"></td>
+                    </tr>
+                    </tr>
+                </table>
+               <input type="button" value="Submit">
+            </form>
+
+
+        </div>
+    </div>
+
+
+    <script>
+
+        const array_img = ["https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg", "https://img.nhandan.com.vn/Files/Images/2020/07/26/nhat_cay-1595747664059.jpg", "https://d1hjkbq40fs2x4.cloudfront.net/2020-01-09/files/canon-landscape-photography-preparation-tips_1968-1s.jpg", "https://cdn.pixabay.com/photo/2020/04/30/14/03/mountains-and-hills-5112952__480.jpg"]
+        let temp = 0;
+        let img_slide = document.querySelector('.slide_img img');
+        let next_ = document.querySelector(".btn_next")
+        let prev_ = document.querySelector(".btn_prev")
+        function next() {
+            // e.preventDefault();
+            if (temp == array_img.length - 1) {
+                temp = -1;
+
+            }
+            temp++;
+            img_slide.src = array_img[temp];
+        }
+        function prev() {
+            // e.preventDefault();
+            if (temp == 0) {
+                temp = array_img.length;
+            }
+            temp--;
+            img_slide.src = array_img[temp];
+        }
+        setInterval(next, 2000)
+        // function slideshow(){
+
+        next_.addEventListener("click", next)
+        prev_.addEventListener("click", next)
+        // }
+       
+
+    </script>
+    <script src="./script.js">
+    </script>
+</body>
+
+</html>
